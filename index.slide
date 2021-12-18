@@ -1,8 +1,9 @@
-Using Go to be a better engineer
+How Go made me a better engineer?
 GopherCon Turkey, 18 December 2021
 
 Ahmet Alp Balkan
-twitter.com/ahmetb
+Software Engineer, Google
+https://twitter.com/ahmetb
 
 *  Hakkimda
 
@@ -11,17 +12,15 @@ Kubernetes, serverless) ve developer tools uzerine calisiyorum.
 
 Bu surenin cogunda programlama dili olarak sadece Go kullandim.
 
-* Bu sunum
-
-- Kariyer tavsiyesi degil.
-- "Go oteki dillerden iyidir" tartismasi degil.
-- Go reklami degil.
-- "Go beni nasil daha iyi bir muhendis yapti" uzerine bir analiz.
+# * Bu sunum
+# - Kariyer tavsiyesi degil.
+# - "Go oteki dillerden iyidir" tartismasi degil.
+# - Go reklami degil.
+# - "Go beni nasil daha iyi bir muhendis yapti" uzerine bir analiz.
 
 * Go neden gelistirildi?
 
 * Google
-
 
 - O(10,000) muhendis
 - O(1,000) servis
@@ -30,18 +29,16 @@ Bu surenin cogunda programlama dili olarak sadece Go kullandim.
 
 Problemler:
 
-1. Dilin Google icindeki ve disindaki kullanimi cok farkli
+1. Bu dillerin Google icindeki ve disindaki kullanimi cok farkli.
 2. Yeni mezun muhendisler bu dillerde uzmanlasmakta zorluk cekiyor.
 
 * Cozum: Go?
 
 Dilin icerideki & disaridaki versiyonu ayni (ayni stdlib, ayni style guide).
 
-Ogrenmesi kolay.
+Kullandiginiz oteki dillere (Python, C, Java vb.) benziyor.
 
-Kullandiginiz oteki dillere benziyor.
-
-Kodu okumak ve anlamak birkac kat daha kolay.
+Kodu okumak bu dillere gore cok daha kolay. Minimalist.
 
 * Go beni nasil degistirdi?
 
@@ -55,14 +52,15 @@ Kullandiginiz oteki diller bunlari ne kadar kolaylastiriyor?
 
 * Go vs oteki diller
 
-Google "how to X in Java" --> Stack Overflow --> kopyala/yapistir -->
-_anlasilamayan hata_ --> Google'da hatayi ara ---(şans)--> cozum.
+Google "how to X in Java" ➔ Stack Overflow ➔ kopyala/yapistir ➔
+anlasilamayan hata ➔ Google'da hatayi ara ➔ cozum.
 
 *Go'da:*
 
 - Ne yapmaya calistigini anla
 - Nasil yapildigini ogren
 - Go stdlib kullanarak implement et
+- Hata varsa mesaji oku, kaynak koduna bak
 
 * Somut ornek: list files in a tar.gz archive
 
@@ -86,12 +84,12 @@ Go:
 
 - Uretkenlik ve gelistiriciye dogru methodlari vermek arasindaki ince denge.
 
-- Low-level konseptlerin farkinda olarak kod yazmak (`os`, `io`, `bufio`,
-  `net`, `net/http`...)
+- Low-level konseptlerin farkinda olarak kod yazdiran abstraction'lar
+  (`os`, `io`, `bufio`, `net`, `net/http`...)
 
-- Okunakli ve anlasilabilir
+- Kaynak kodu kolayca okunabiliyor.
 
-Go sizi bir kutuphanenin nasil tasarlanmasi konusunda dusunmeye itiyor.
+- Go'da bir kutuphane nasil tasarlanmali diye ornek oluyor.
 
 * Bir egitim araci olarak Go stdlib
 
@@ -110,12 +108,7 @@ Kullandiginiz dil/framework stres altinda nasil davraniyor?
 - Tahmin edilebilir kutuphane icerigi
 
 Oteki dillerin gizlemeye calistigi detayli ayarlar (connection pooling,
-timeout'lar, concurrency limitleri, buffer size) Go'da programcinin erisebilecegi
-yerde oluyor.
-
-* Go ile infrastructure engineering
-
-Systems programming ve infrastructure software implementation'lari:
+timeout'lar, concurrency limitleri, buffer size, ...) Go'da gelistiriciye sunuluyor.
 
 
 * Go ile infrastructure engineering ve distributed systems
