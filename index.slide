@@ -98,7 +98,6 @@ Go:
 - Protocol: `net/http`, `net/smtp`
 - Syscalls: `os`, `os/exec`
 
-
 * Go ile reliable programlar yazmak
 
 Kullandiginiz dil/framework stres altinda nasil davraniyor?
@@ -110,10 +109,9 @@ Kullandiginiz dil/framework stres altinda nasil davraniyor?
 Oteki dillerin gizlemeye calistigi detayli ayarlar (connection pooling,
 timeout'lar, concurrency limitleri, buffer size, ...) Go'da gelistiriciye sunuluyor.
 
-
 * Go ile infrastructure engineering ve distributed systems
 
-Aklinizdaki fikri dogrudan implementasyona dokebilmek.
+Aklinizdaki fikri dogrudan implementasyona dokebilmek icin ideal.
 
 Runtime'in bottleneck olmadigi (networked) sistemlerde Go ile anlasilabilir ve maintain edilebilir implementasyonlar yapmak mumkun.
 
@@ -121,9 +119,18 @@ Runtime'in bottleneck olmadigi (networked) sistemlerde Go ile anlasilabilir ve m
 - OS ile etkilesen parcalar (orn. Docker, Kubernetes)
 - Dagitik veritabanlari (orn. etcd, TiKV, groupcache, CockroachDB)
 
+Bir cok open source maintainer kariyer imkani.
+
 * Go'ya yeni baslayanlara tavsiyeler
 
-- Perdeyi aralayin
+- Perdenin arkasina bakin
 - Stdlib ve oteki paketleri okuyun
+- Go ile GNU coreutils araclarini reimplement edin (`rm`, `tail`, `uniq` vb.)
 - Baska dillerdeki aliskanliklarinizi Go'ya getirmeyin
-- Go'nun tasarimindaki felsefeyi anlamaya calisin.
+- Go'nun tasarimindaki felsefeyi anlamaya calisin
+
+* Calisma ortaminiza Go'yu getirmek
+
+- Farkli diller kullanan gelistiriciler icin basit bir ortak nokta.
+- Ufak automation araclari ve developer tool'lar gelistirin.
+- Yeni basladiginiz ufak bir altyapi projesini Go ile yapmayi deneyin.
