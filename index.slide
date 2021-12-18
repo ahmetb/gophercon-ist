@@ -43,10 +43,94 @@ Kullandiginiz oteki dillere benziyor.
 
 Kodu okumak ve anlamak birkac kat daha kolay.
 
+* Go beni nasil degistirdi?
+
 * Iyi bir muhendisten beklentiler
 
 - Yeni bir projeye/ortama hizli ayak uydurabilmesi.
-- Aklindaki plani makul bir zamanda production-ready koda dokebilmesi.
+- Aklindaki plani production-ready koda dokebilmesi.
 - Karsilastigi problemleri kendi basina (ya da az bir yardimla) cozebilmesi.
 
-Bugune kadar kullandiginiz diller bunlari ne kadar kolay sagliyor?
+Kullandiginiz oteki diller bunlari ne kadar kolaylastiriyor?
+
+* Go vs oteki diller
+
+Google "how to X in Java" --> Stack Overflow --> kopyala/yapistir -->
+_anlasilamayan hata_ --> Google'da hatayi ara ---(şans)--> cozum.
+
+*Go'da:*
+
+- Ne yapmaya calistigini anla
+- Nasil yapildigini ogren
+- Go stdlib kullanarak implement et
+
+* Somut ornek: list files in a tar.gz archive
+
+Java:
+
+- "You can do this with the Apache Commons Compress library. "
+- "I recommend using TrueZIP. It's really good. It's an excellent, fast library. It has TAR drivers, and can handle *.tar.gz and *.tar.bz2 files. The JavaDocs are clear and complete, though I found the standalone tutorials insufficient - I had to read the JavaDoc to get things working."
+
+Go:
+
+	t := gzip.NewReader(tar.Reader(r))
+	for {
+		hdr, err := t.Next()
+		if err == io.EOF { break }
+		fmt.Println(hdr.Name, hdr.Mode, hdr.Size)
+	}
+
+* Go standard library
+
+- Stdlib'de neler olmali ve olmamali konusunda bir ders.
+
+- Uretkenlik ve gelistiriciye dogru methodlari vermek arasindaki ince denge.
+
+- Low-level konseptlerin farkinda olarak kod yazmak (`os`, `io`, `bufio`,
+  `net`, `net/http`...)
+
+- Okunakli ve anlasilabilir
+
+Go sizi bir kutuphanenin nasil tasarlanmasi konusunda dusunmeye itiyor.
+
+* Bir egitim araci olarak Go stdlib
+
+- Parsing: `text/template`
+- Format: `encoding/json`
+- Protocol: `net/http`, `net/smtp`
+- Syscalls: `os`, `os/exec`
+
+
+* Go ile reliable programlar yazmak
+
+Kullandiginiz dil/framework stres altinda nasil davraniyor?
+
+- Kolay anlasilir runtime behavior
+- Kolay anlasilir memory kullanimi (anlasilabilen veri yapilari)
+- Tahmin edilebilir kutuphane icerigi
+
+Oteki dillerin gizlemeye calistigi detayli ayarlar (connection pooling,
+timeout'lar, concurrency limitleri, buffer size) Go'da programcinin erisebilecegi
+yerde oluyor.
+
+* Go ile infrastructure engineering
+
+Systems programming ve infrastructure software implementation'lari:
+
+
+* Go ile infrastructure engineering ve distributed systems
+
+Aklinizdaki fikri dogrudan implementasyona dokebilmek.
+
+Runtime'in bottleneck olmadigi (networked) sistemlerde Go ile anlasilabilir ve maintain edilebilir implementasyonlar yapmak mumkun.
+
+- Control plane API'lar (orn. Kubernetes)
+- OS ile etkilesen parcalar (orn. Docker, Kubernetes)
+- Dagitik veritabanlari (orn. etcd, TiKV, groupcache, CockroachDB)
+
+* Go'ya yeni baslayanlara tavsiyeler
+
+- Perdeyi aralayin
+- Stdlib ve oteki paketleri okuyun
+- Baska dillerdeki aliskanliklarinizi Go'ya getirmeyin
+- Go'nun tasarimindaki felsefeyi anlamaya calisin.
